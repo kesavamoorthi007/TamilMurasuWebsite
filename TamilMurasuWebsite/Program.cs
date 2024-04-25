@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Http.Features;
-
-
+using TamilMurasuWebsite.Interface;
+using TamilMurasuWebsite.Services;
 
 internal class Program
 {
@@ -13,6 +13,7 @@ internal class Program
         builder.Services.AddControllersWithViews();
 
         builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        builder.Services.TryAddSingleton<IHomeDeatilsService, HomeDeatilsService>();
 
         builder.Services.AddSession();
 
@@ -44,7 +45,7 @@ internal class Program
 
         app.MapControllerRoute(
             name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}");
+            pattern: "{controller=HomeDeatils}/{action=HomeDeatils}/{id?}");
 
 
 
