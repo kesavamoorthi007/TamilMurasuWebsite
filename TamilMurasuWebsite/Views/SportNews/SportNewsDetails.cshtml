@@ -1,4 +1,4 @@
-﻿@model TamilMurasuWebsite.Models.News
+﻿@model TamilMurasuWebsite.Models.SportNews
 @{
 
 }
@@ -16,7 +16,7 @@
 				Home
 			</a>
 			<a class="breadcrumb-item f1-s-3 cl9">
-				செய்திகள்
+				விளையாட்டு
 			</a>
 		</div>
 	</div>
@@ -28,7 +28,7 @@
 			@{
 				int n = 0;
 
-				foreach (var item in Model.NewsHeadlst.ToList())
+				foreach (var item in Model.SportNewsDetailslst.ToList())
 
 				{
 					<div class="col-md-10 col-lg-8 p-b-30">
@@ -36,20 +36,20 @@
 							<!-- Blog Detail -->
 							<div class="p-b-70">
 
-								<a  class="f1-s-10 cl2 hov-cl10 trans-03 text-uppercase">
-									செய்திகள்
+								<a class="f1-s-10 cl2 hov-cl10 trans-03 text-uppercase">
+									விளையாட்டு
 								</a>
 
 								<h4 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
-									@Html.DisplayFor(o => o.NewsHeadlst[n].News_head1_N)
-									@Html.HiddenFor(o => o.NewsHeadlst[n].N_id)
+									@Html.DisplayFor(o => o.SportNewsDetailslst[n].News_head1_d)
+									@Html.HiddenFor(o => o.SportNewsDetailslst[n].N_id_d)
 								</h4>
 
 								<div class="flex-wr-s-s p-b-40">
 									<span class="f1-s-3 cl8 m-r-15">
 										<span>
-											@Html.DisplayFor(o => o.NewsHeadlst[n].News_date_N)
-											@Html.HiddenFor(o => o.NewsHeadlst[n].N_id)
+											@Html.DisplayFor(o => o.SportNewsDetailslst[n].News_date_d)
+											@Html.HiddenFor(o => o.SportNewsDetailslst[n].N_id_d)
 
 										</span>
 									</span>
@@ -68,8 +68,8 @@
 								</div>
 
 								<p class="f1-s-11 cl6 p-b-25">
-									@Html.DisplayFor(o => o.NewsHeadlst[n].News_des_N)
-									@Html.HiddenFor(o => o.NewsHeadlst[n].N_id)
+									@Html.DisplayFor(o => o.SportNewsDetailslst[n].News_des_d)
+									@Html.HiddenFor(o => o.SportNewsDetailslst[n].N_id_d)
 
 								</p>
 

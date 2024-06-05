@@ -8,6 +8,12 @@ namespace TamilMurasuWebsite.Interface
 {
 	public interface IHomeDeatilsService
 	{
+		DataTable GetHeadNews();
 		DataTable GetHomeDeatils();
+		DataTable GetLatestNews();
+		DataTable GetNewsFirstLine();
+		DataTable GetNewsLine();
+        DataTable GetSportLine();
+        DataTable GetSportNews();
 	}
 }

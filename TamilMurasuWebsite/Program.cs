@@ -11,9 +11,13 @@ internal class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
-
         builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         builder.Services.TryAddSingleton<IHomeDeatilsService, HomeDeatilsService>();
+        builder.Services.TryAddSingleton<ISportNewsDetailService, SportNewsDetailService>();
+        builder.Services.TryAddSingleton<INewsDeatilService, NewsDeatilService>();
+        builder.Services.TryAddSingleton<ISportHeadNewsService, SportHeadNewsService>();
+        builder.Services.TryAddSingleton<INewsService, NewsService>();
+        builder.Services.TryAddSingleton<ISportNewsService, SportNewsService>();
 
         builder.Services.AddSession();
 
