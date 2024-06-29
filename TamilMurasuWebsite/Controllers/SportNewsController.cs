@@ -16,7 +16,7 @@ namespace TamilMurasuWebsite.Controllers
 			SportNewsService = _SportNewsService;
 			_connectionString = _configuratio.GetConnectionString("MySqlConnection");
 		}
-		public IActionResult SportNews(string id)
+		public IActionResult SportNews()
 		{
 			SportNews br = new SportNews();
 
@@ -24,7 +24,7 @@ namespace TamilMurasuWebsite.Controllers
 			SportNewsHead tda = new SportNewsHead();
 
 			DataTable dt1 = new DataTable();
-			dt1 = SportNewsService.GetSportNews(id);
+			dt1 = SportNewsService.GetSportNews();
 			for (int i = 0; i < dt1.Rows.Count; i++)
 			{
 				tda = new SportNewsHead();

@@ -1,4 +1,4 @@
-﻿@model TamilMurasuWebsite.Models.TamilNadu
+﻿@model TamilMurasuWebsite.Models.Aanmeegam
 @{
 
 }
@@ -30,11 +30,11 @@
 			</a>
 
 			<a href="@Url.ActionLink("TamilNadu","TamilNadu")" class="breadcrumb-item f1-s-3 cl9 ">
-				தமிழ்நாடு
+				ஆன்மிகம்
 			</a>
 
 			<span class="breadcrumb-item f1-s-3 cl9">
-				தமிழ்நாடு
+				ஆன்மிகம்
 			</span>
 		</div>
 
@@ -50,7 +50,7 @@
 <!-- Page heading -->
 <div class="container p-t-4 p-b-40">
 	<h2 class="f1-m-3 cl2 nav-link font-weight-bold text-title nav-link--recent-articles" data-drupal-link-system-path="recent-articles">
-		தமிழ்நாடு
+		ஆன்மிகம்
 	</h2>
 </div>
 <!-- Feature post -->
@@ -134,30 +134,30 @@
 						@{
 							int k = 0;
 
-							foreach (var item in Model.Tamillst.ToList())
+							foreach (var item in Model.Aanmeegamlist.ToList())
 							{
 								<!-- Item post -->
 								<div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2">
-									<a  class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
+									<a class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
 										<img src="~/assets/images/post-43.jpg" alt="IMG">
 									</a>
 
 									<div class="size-w-9 w-full-sr575 m-b-25">
 										<h5 class="p-b-12">
-											<a href="@Url.ActionLink("TamilNaduDeatils","TamilNadu" ,new { id =item.N_id })" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
-												@Html.DisplayFor(o => o.Tamillst[k].News_head1)
-												@Html.HiddenFor(o => o.Tamillst[k].N_id)
+											<a href="@Url.ActionLink("AanmeegamDeatils","Aanmeegam" ,new { id =item.N_id })" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+												@Html.DisplayFor(o => o.Aanmeegamlist[k].News_head1)
+												@Html.HiddenFor(o => o.Aanmeegamlist[k].N_id)
 											</a>
 										</h5>
 
 										<div class="cl8 p-b-18">
 											<span class="f1-s-3">
-												@Html.DisplayFor(o => o.Tamillst[k].News_date)
-												@Html.HiddenFor(o => o.Tamillst[k].N_id)
+												@Html.DisplayFor(o => o.Aanmeegamlist[k].News_date)
+												@Html.HiddenFor(o => o.Aanmeegamlist[k].N_id)
 											</span>
 										</div>
 
-										<a href="@Url.ActionLink("TamilNaduDeatils","TamilNadu" ,new { id =item.N_id })" class="f1-s-1 cl9 hov-cl10 trans-03">
+										<a href="@Url.ActionLink("AanmeegamDeatils","Aanmeegam" ,new { id =item.N_id })" class="f1-s-1 cl9 hov-cl10 trans-03">
 											Read More
 											<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
 										</a>
