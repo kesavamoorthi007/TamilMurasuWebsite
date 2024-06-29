@@ -18,6 +18,11 @@ internal class Program
         builder.Services.TryAddSingleton<ISportHeadNewsService, SportHeadNewsService>();
         builder.Services.TryAddSingleton<INewsService, NewsService>();
         builder.Services.TryAddSingleton<ISportNewsService, SportNewsService>();
+        builder.Services.TryAddSingleton<ITamilNaduService, TamilNaduService>();
+        builder.Services.TryAddSingleton<ICinimaService, CinimaService>();
+        builder.Services.TryAddSingleton<IIndiaNewsService, IndiaNewsService>();
+        builder.Services.TryAddSingleton<IWorldNewsService, WorldNewsService>();
+        builder.Services.TryAddSingleton<IAanmeegamService, AanmeegamService>();
 
         builder.Services.AddSession();
 
@@ -50,8 +55,6 @@ internal class Program
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller=HomeDeatils}/{action=HomeDeatils}/{id?}");
-
-
 
         app.Run();
     }

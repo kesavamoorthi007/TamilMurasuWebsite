@@ -1,34 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using DocumentFormat.OpenXml.Office2010.Excel;
-using System.Data;
 using TamilMurasuWebsite.Interface;
 using TamilMurasuWebsite.Models;
 using TamilMurasuWebsite.Services;
+using System.Data;
 
 namespace TamilMurasuWebsite.Controllers
 {
-	public class IndiaNewsController : Controller
+	public class AanmeegamController : Controller
 	{
-		IIndiaNewsService IndiaNewsService;
+		IAanmeegamService AanmeegamService;
 		IConfiguration? _configuratio;
 		private string? _connectionString;
-		public IndiaNewsController(IIndiaNewsService _IndiaNewsService, IConfiguration _configuratio)
+		public AanmeegamController(IAanmeegamService _AanmeegamService, IConfiguration _configuratio)
 		{
-			IndiaNewsService = _IndiaNewsService;
+			AanmeegamService = _AanmeegamService;
 			_connectionString = _configuratio.GetConnectionString("MySqlConnection");
 		}
-		public IActionResult IndiaNews()
+		public IActionResult Aanmeegam()
 		{
-			IndiaNews br = new IndiaNews();
+			Aanmeegam br = new Aanmeegam();
 
-			List<India> TData = new List<India>();
-			India tda = new India();
+			List<AanmeegamList> TData = new List<AanmeegamList>();
+			AanmeegamList tda = new AanmeegamList();
 
 			DataTable dt1 = new DataTable();
-			dt1 = IndiaNewsService.GetIndiaNews();
+			dt1 = AanmeegamService.GetAanmeegamService();
 			for (int i = 0; i < dt1.Rows.Count; i++)
 			{
-				tda = new India();
+				tda = new AanmeegamList();
 				tda.News_head1 = dt1.Rows[i]["NT_Head"].ToString();
 				tda.News_des = dt1.Rows[i]["N_Description"].ToString();
 				tda.News_image = dt1.Rows[i]["S_Image"].ToString();
@@ -37,21 +36,21 @@ namespace TamilMurasuWebsite.Controllers
 				TData.Add(tda);
 
 			}
-			br.Indialst = TData;
+			br.Aanmeegamlist = TData;
 			return View(br);
 		}
-		public IActionResult IndiaNewsDeatils(string id)
+		public IActionResult AanmeegamDeatils(string id)
 		{
-			IndiaNews br = new IndiaNews();
+			Aanmeegam br = new Aanmeegam();
 
-			List<IndiaNewsDeatils> TData1 = new List<IndiaNewsDeatils>();
-			IndiaNewsDeatils tda1 = new IndiaNewsDeatils();
+			List<AanmeegamDeatilsList> TData1 = new List<AanmeegamDeatilsList>();
+			AanmeegamDeatilsList tda1 = new AanmeegamDeatilsList();
 
 			DataTable dt2 = new DataTable();
-			dt2 = IndiaNewsService.GetIndiaNewsDeatils(id);
+			dt2 = AanmeegamService.GetAanmeegamDeatils(id);
 			for (int i = 0; i < dt2.Rows.Count; i++)
 			{
-				tda1 = new IndiaNewsDeatils();
+				tda1 = new AanmeegamDeatilsList();
 				tda1.News_head1_d = dt2.Rows[i]["NT_Head"].ToString();
 				tda1.News_des_d = dt2.Rows[i]["N_Description"].ToString();
 				tda1.News_image_d = dt2.Rows[i]["S_Image"].ToString();
@@ -60,7 +59,7 @@ namespace TamilMurasuWebsite.Controllers
 				TData1.Add(tda1);
 
 			}
-			br.IndiaNewsDeatilslist = TData1;
+			br.AanmeegamDeatilslist = TData1;
 			return View(br);
 		}
 	}

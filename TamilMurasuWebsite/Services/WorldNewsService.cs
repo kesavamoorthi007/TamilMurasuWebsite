@@ -12,14 +12,14 @@ using DocumentFormat.OpenXml.Office2010.Excel;
 
 namespace TamilMurasuWebsite.Services
 {
-	public class SportNewsService : ISportNewsService
+	public class WorldNewsService : IWorldNewsService
 	{
 		private readonly string _connectionString;
-		public SportNewsService(IConfiguration _configuratio)
+		public WorldNewsService(IConfiguration _configuratio)
 		{
 			_connectionString = _configuratio.GetConnectionString("MySqlConnection");
 		}
-		public DataTable GetSportNews()
+		public DataTable GetWorldNews()
 		{
 			string SvSql = string.Empty;
 			SvSql = "select top 10 N_Id,C_Id,NT_Head,N_Description,S_Image,CONVERT(varchar, TMNews_N.AddedDate, 106) AS AddedDateFormatted from TMNews_N  where C_id='6'  order by N_Id desc";
@@ -28,13 +28,12 @@ namespace TamilMurasuWebsite.Services
 			SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
 			adapter.Fill(dtt);
 			return dtt;
-
 		}
 
-		public DataTable SportNewsDetails(string id)
+		public DataTable GetWorldNewsService(string id)
 		{
 			string SvSql = string.Empty;
-			SvSql = "select top 10 N_Id,C_Id,NT_Head,N_Description,S_Image,CONVERT(varchar, TMNews_N.AddedDate, 106) AS AddedDateFormatted from TMNews_N  where C_id='6' and N_Id='" + id +"'  order by N_Id desc";
+			SvSql = "select top 10 N_Id,C_Id,NT_Head,N_Description,S_Image,CONVERT(varchar, TMNews_N.AddedDate, 106) AS AddedDateFormatted from TMNews_N  where C_id='6' and N_Id='" + id + "'  order by N_Id desc";
 			DataTable dtt = new DataTable();
 			SqlDataAdapter adapter = new SqlDataAdapter(SvSql, _connectionString);
 			SqlCommandBuilder builder = new SqlCommandBuilder(adapter);

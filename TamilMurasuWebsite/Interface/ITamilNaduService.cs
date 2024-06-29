@@ -5,10 +5,9 @@ using TamilMurasuWebsite.Models;
 
 namespace TamilMurasuWebsite.Interface
 {
-	public interface ISportNewsService
+	public interface ITamilNaduService
 	{
-		DataTable GetSportNews();
-		DataTable SportNewsDetails(string id);
-
+		DataTable GetTamilNadu();
+		DataTable GetTamilNaduDeatils(string id);
 	}
 }
