@@ -68,7 +68,7 @@
 								</div>
 
 								<p class="f1-s-11 cl6 p-b-25">
-									@Html.DisplayFor(o => o.TamilDeatilslist[n].News_des_d)
+									@Html.Raw(Model.TamilDeatilslist[n].News_des_d)
 									@Html.HiddenFor(o => o.TamilDeatilslist[n].N_id_d)
 
 								</p>

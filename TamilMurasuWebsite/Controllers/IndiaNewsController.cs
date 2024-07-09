@@ -32,6 +32,7 @@ namespace TamilMurasuWebsite.Controllers
 				tda.News_head1 = dt1.Rows[i]["NT_Head"].ToString();
 				tda.News_des = dt1.Rows[i]["N_Description"].ToString();
 				tda.News_image = dt1.Rows[i]["S_Image"].ToString();
+				tda.L_News_image = dt1.Rows[i]["L_Image"].ToString();
 				tda.News_date = dt1.Rows[i]["AddedDateFormatted"].ToString();
 				tda.N_id = dt1.Rows[i]["N_Id"].ToString();
 				TData.Add(tda);
@@ -55,6 +56,7 @@ namespace TamilMurasuWebsite.Controllers
 				tda1.News_head1_d = dt2.Rows[i]["NT_Head"].ToString();
 				tda1.News_des_d = dt2.Rows[i]["N_Description"].ToString();
 				tda1.News_image_d = dt2.Rows[i]["S_Image"].ToString();
+				tda1.L_News_image = dt2.Rows[i]["L_Image"].ToString();
 				tda1.News_date_d = dt2.Rows[i]["AddedDateFormatted"].ToString();
 				tda1.N_id_d = dt2.Rows[i]["N_Id"].ToString();
 				TData1.Add(tda1);

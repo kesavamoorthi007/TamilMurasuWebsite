@@ -15,6 +15,7 @@ namespace TamilMurasuWebsite.Models
 		public string News_image { get; set; }
 		public string News_date { get; set; }
 		public string N_id { get; set; }
+		public string L_News_image { get; set; }
 
 	}
 	public class AanmeegamDeatilsList
@@ -24,5 +25,6 @@ namespace TamilMurasuWebsite.Models
 		public string News_image_d { get; set; }
 		public string News_date_d { get; set; }
 		public string N_id_d { get; set; }
+		public string L_News_image { get; set; }
 	}
 }
