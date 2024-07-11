@@ -15,5 +15,9 @@ namespace TamilMurasuWebsite.Interface
 		DataTable GetNewsLine();
         DataTable GetSportLine();
         DataTable GetSportNews();
+        DataTable GetIndiaNews();
+        DataTable GetWorldNews();
+        DataTable GetTopIndiaNews();
+        DataTable GetTopCinimaNews();
 	}
 }
