@@ -4,10 +4,18 @@
 }
 
 <style>
+	.p-b-35
+	{
+		padding-bottom: 20px;
+	}
+	.p-t-60
+	{
+		padding-top: 25px;
+	}
 	.f1-l-1 {
 		font-family: Roboto-Medium;
-		font-size: 25px;
-		line-height: 1.2;
+		font-size: 14px;
+		line-height: 1.3;
 	}
 
 	.f1-m-3 {
@@ -71,14 +79,14 @@
 						</a>
 
 						<h4 class="how1-child2 m-t-14 m-b-10">
-							<a href="@Url.ActionLink("NewsDeatil","NewsDeatil")" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
+							<a href="@Url.ActionLink("NewsDeatil","NewsDeatil")" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03" nav-link font-weight-bold text-title nav-link--recent-articles" data-drupal-link-system-path="recent-articles">
 								@Html.DisplayFor(C => C.NT_head)
 								@Html.HiddenFor(C => C.ID)
 							</a>
 						</h4> 
 
 						<span class="how1-child2">
-							<span class="f1-s-3 cl11">
+							<span class="f1-s-3 cl11"  nav-link font-weight-bold text-title nav-link--recent-articles" data-drupal-link-system-path="recent-articles">
 								@Html.DisplayFor(C => C.News_date)
 							</span>
 						</span>
@@ -98,8 +106,8 @@
 								</a>
 
 								<h1 class="how1-child2 m-t-14">
-									<a href="@Url.ActionLink("SportNewsDetail","SportNewsDetail")" class="how-txt1 size-a-7 f1-l-2 cl0 hov-cl10 trans-03">
-										@Html.DisplayFor(C => C.News_head1)
+									<a href="@Url.ActionLink("SportNewsDetail","SportNewsDetail")" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03" nav-link font-weight-bold text-title nav-link--recent-articles" data-drupal-link-system-path="recent-articles">
+										@Html.DisplayFor(C => C.News_head1_sport)
 										@Html.HiddenFor(C => C.ID)
 									</a>
 								</h1>
@@ -107,21 +115,24 @@
 						</div>
 					</div>
 					<div class="col-sm-6 p-rl-1 p-b-2">
+					
 						<div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url(assets/images/India.jpg);">
 							<a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
 
 							<div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-								<a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+								<a href="@Url.ActionLink("IndiaNews","IndiaNews")" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
 									இந்தியா
 								</a>
 
 								<h3 class="how1-child2 m-t-14">
-									<a href="blog-detail-01.html" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
-										Pellentesque dui nibh, pellen-tesque ut dapibus ut
+									<a href="@Url.ActionLink("IndiaNews","IndiaNews")" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03" nav-link font-weight-bold text-title nav-link--recent-articles" data-drupal-link-system-path="recent-articles">
+										@Html.DisplayFor(C => C.NT_Head_i)
+								@Html.HiddenFor(C => C.ID)
 									</a>
 								</h3>
 							</div>
 						</div>
+							
 					</div>
 
 					<div class="col-sm-6 p-rl-1 p-b-2">
@@ -129,13 +140,14 @@
 							<a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
 
 							<div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-								<a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+								<a href="@Url.ActionLink("Cinima","Cinima")" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
 									சினிமா
 								</a>
 
 								<h3 class="how1-child2 m-t-14">
-									<a href="blog-detail-01.html" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
-										Pellentesque dui nibh, pellen-tesque ut dapibus ut
+									<a href="@Url.ActionLink("Cinima","Cinima")" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03" nav-link font-weight-bold text-title nav-link--recent-articles" data-drupal-link-system-path="recent-articles">
+										@Html.DisplayFor(C => C.NT_Head_c)
+										@Html.HiddenFor(C => C.ID)
 									</a>
 								</h3>
 							</div>
@@ -147,7 +159,6 @@
 		</div>
 	</div>
 </section>
-
 <!-- Latest -->
 <section class="bg0 p-t-60 p-b-35">
 	<div class="container">
@@ -172,13 +183,16 @@
 									</a>
 									<div class="p-t-16">
 										<h5 class="p-b-5">
-											<a href="@Url.ActionLink("News","News" ,new { id =item.N_id })" class="f1-m-3 cl2 hov-cl10 trans-03">
+											<a href="@Url.ActionLink("News","News" ,new { id =item.N_id })" class="f1-l-1 font-weight-bold cl2 hov-cl10 trans-03">
 												@Html.DisplayFor(o => o.NewsFirstlst[k].News_head1_N)
 												@Html.HiddenFor(o => o.NewsFirstlst[k].N_id)
 											</a>
 										</h5>
 										<span class="cl8">
-											<span class="f1-s-3">
+											<span class="f1-s-3 m-rl-3">
+												-
+											</span>
+											<span class="f1-s-3 font-weight-bold">
 												@Html.DisplayFor(o => o.NewsFirstlst[k].News_date_N)
 											</span>
 										</span>
@@ -260,7 +274,7 @@
 											-
 										</span>
 
-										<span class="f1-s-3">
+										<span class="f1-s-3 ">
 											Feb 18
 										</span>
 									</span>
@@ -337,16 +351,6 @@
 		</div>
 	</div>
 </section>
-
-<!-- Banner -->
-<div class="container">
-	<div class="flex-c-c">
-		<a href="#">
-			<img class="max-w-full" src="~/assets/images/banner-01.jpg" alt="IMG">
-		</a>
-	</div>
-</div>
-
 <!-- Post -->
 <section class="bg0 p-t-60 p-b-35">
 	<div class="container">
@@ -372,13 +376,16 @@
 									</a>
 									<div class="p-t-16">
 										<h5 class="p-b-5">
-											<a href="@Url.ActionLink("SportHeadNews","SportHeadNews" ,new { id =item.N_id })" class="f1-m-3 cl2 hov-cl10 trans-03">
+											<a href="@Url.ActionLink("SportHeadNews","SportHeadNews" ,new { id =item.N_id })" class="f1-l-1 font-weight-bold cl2 hov-cl10 trans-03">
 												@Html.DisplayFor(o => o.Latestslst[n].News_head1_s)
 												@Html.HiddenFor(o => o.Latestslst[n].N_id)
 											</a>
 										</h5>
+										<span class="f1-s-3 m-rl-3">
+											-
+										</span>
 										<span class="cl8">
-											<span class="f1-s-3">
+											<span class="f1-s-3 font-weight-bold">
 												@Html.DisplayFor(o => o.Latestslst[n].News_date_s)
 											</span>
 										</span>
@@ -408,16 +415,6 @@
 		</div>
 	</div>
 </section>
-
-<!-- Banner -->
-<div class="container">
-	<div class="flex-c-c">
-		<a href="#">
-			<img class="max-w-full" src="~/assets/images/banner-01.jpg" alt="IMG">
-		</a>
-	</div>
-</div>
-
 <!-- Post -->
 <section class="bg0 p-t-60 p-b-35">
 	<div class="container">
@@ -430,130 +427,42 @@
 				</div>
 
 				<div class="row p-t-35">
+				@{
+						int i = 0;
+								foreach (var item in Model.IndiaNewsListlst.ToList())
+						{
 					<div class="col-sm-6 p-r-25 p-r-15-sr991">
 						<!-- Item latest -->
 						<div class="m-b-45">
-							<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+						
+					
+									<a href="@Url.ActionLink("IndiaNews","IndiaNews" ,new { id =item.N_id })" class="wrap-pic-w hov1 trans-03">
 								<img src="~/assets/images/latest-01.jpg" alt="IMG">
 							</a>
 
 							<div class="p-t-16">
 								<h5 class="p-b-5">
-									<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-										You wish lorem ipsum dolor sit amet consectetur
+											<a href="@Url.ActionLink("IndiaNews","IndiaNews" ,new { id =item.N_id })" class="f1-l-1 font-weight-bold cl2 hov-cl10 trans-03">
+												@Html.DisplayFor(o => o.IndiaNewsListlst[i].NT_Head_i)
+												@Html.HiddenFor(o => o.IndiaNewsListlst[i].N_id)
 									</a>
 								</h5>
-
 								<span class="cl8">
-									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-										by John Alvarado
-									</a>
-
 									<span class="f1-s-3 m-rl-3">
 										-
 									</span>
 
-									<span class="f1-s-3">
-										Feb 18
+									<span class="f1-s-3 font-weight-bold">
+												@Html.DisplayFor(o => o.IndiaNewsListlst[i].date_i)
 									</span>
 								</span>
 							</div>
+									
 						</div>
 					</div>
-
-					<div class="col-sm-6 p-r-25 p-r-15-sr991">
-						<!-- Item latest -->
-						<div class="m-b-45">
-							<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-								<img src="~/assets/images/latest-02.jpg" alt="IMG">
-							</a>
-
-							<div class="p-t-16">
-								<h5 class="p-b-5">
-									<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-										You wish lorem ipsum dolor sit amet consectetur
-									</a>
-								</h5>
-
-								<span class="cl8">
-									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-										by John Alvarado
-									</a>
-
-									<span class="f1-s-3 m-rl-3">
-										-
-									</span>
-
-									<span class="f1-s-3">
-										Feb 16
-									</span>
-								</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 p-r-25 p-r-15-sr991">
-						<!-- Item latest -->
-						<div class="m-b-45">
-							<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-								<img src="~/assets/images/latest-01.jpg" alt="IMG">
-							</a>
-
-							<div class="p-t-16">
-								<h5 class="p-b-5">
-									<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-										You wish lorem ipsum dolor sit amet consectetur
-									</a>
-								</h5>
-
-								<span class="cl8">
-									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-										by John Alvarado
-									</a>
-
-									<span class="f1-s-3 m-rl-3">
-										-
-									</span>
-
-									<span class="f1-s-3">
-										Feb 18
-									</span>
-								</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 p-r-25 p-r-15-sr991">
-						<!-- Item latest -->
-						<div class="m-b-45">
-							<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-								<img src="~/assets/images/latest-01.jpg" alt="IMG">
-							</a>
-
-							<div class="p-t-16">
-								<h5 class="p-b-5">
-									<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-										You wish lorem ipsum dolor sit amet consectetur
-									</a>
-								</h5>
-
-								<span class="cl8">
-									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-										by John Alvarado
-									</a>
-
-									<span class="f1-s-3 m-rl-3">
-										-
-									</span>
-
-									<span class="f1-s-3">
-										Feb 18
-									</span>
-								</span>
-							</div>
-						</div>
-					</div>
-
+							i = i + 1;
+						}
+					}
 				</div>
 			</div>
 			<div class="col-md-10 col-lg-4">
@@ -646,16 +555,6 @@
 		</div>
 	</div>
 </section>
-
-<!-- Banner -->
-<div class="container">
-	<div class="flex-c-c">
-		<a href="#">
-			<img class="max-w-full" src="~/assets/images/banner-01.jpg" alt="IMG">
-		</a>
-	</div>
-</div>
-
 <!-- Post -->
 <section class="bg0 p-t-60 p-b-35">
 	<div class="container">
@@ -668,130 +567,39 @@
 				</div>
 
 				<div class="row p-t-35">
+				@{
+						int a = 0;
+						foreach (var item in Model.WorldNewsListlst.ToList())
+						{
 					<div class="col-sm-6 p-r-25 p-r-15-sr991">
 						<!-- Item latest -->
 						<div class="m-b-45">
-							<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+									<a href="@Url.ActionLink("WorldNews","WorldNews" ,new { id =item.N_id })" class="wrap-pic-w hov1 trans-03">
 								<img src="~/assets/images/latest-01.jpg" alt="IMG">
 							</a>
 
 							<div class="p-t-16">
 								<h5 class="p-b-5">
-									<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-										You wish lorem ipsum dolor sit amet consectetur
+											<a href="@Url.ActionLink("WorldNews","WorldNews" ,new { id =item.N_id })" class="f1-l-1 font-weight-bold cl2 hov-cl10 trans-03">
+												@Html.DisplayFor(o => o.WorldNewsListlst[a].NT_Head_w)
+												@Html.HiddenFor(o => o.WorldNewsListlst[a].N_id)
 									</a>
 								</h5>
 
 								<span class="cl8">
-									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-										by John Alvarado
-									</a>
-
 									<span class="f1-s-3 m-rl-3">
 										-
 									</span>
-
-									<span class="f1-s-3">
-										Feb 18
+											<span class="f1-s-3 font-weight-bold">
+												@Html.DisplayFor(o => o.WorldNewsListlst[a].date_w)
 									</span>
 								</span>
 							</div>
 						</div>
 					</div>
-
-					<div class="col-sm-6 p-r-25 p-r-15-sr991">
-						<!-- Item latest -->
-						<div class="m-b-45">
-							<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-								<img src="~/assets/images/latest-02.jpg" alt="IMG">
-							</a>
-
-							<div class="p-t-16">
-								<h5 class="p-b-5">
-									<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-										You wish lorem ipsum dolor sit amet consectetur
-									</a>
-								</h5>
-
-								<span class="cl8">
-									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-										by John Alvarado
-									</a>
-
-									<span class="f1-s-3 m-rl-3">
-										-
-									</span>
-
-									<span class="f1-s-3">
-										Feb 16
-									</span>
-								</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 p-r-25 p-r-15-sr991">
-						<!-- Item latest -->
-						<div class="m-b-45">
-							<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-								<img src="~/assets/images/latest-01.jpg" alt="IMG">
-							</a>
-
-							<div class="p-t-16">
-								<h5 class="p-b-5">
-									<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-										You wish lorem ipsum dolor sit amet consectetur
-									</a>
-								</h5>
-
-								<span class="cl8">
-									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-										by John Alvarado
-									</a>
-
-									<span class="f1-s-3 m-rl-3">
-										-
-									</span>
-
-									<span class="f1-s-3">
-										Feb 18
-									</span>
-								</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 p-r-25 p-r-15-sr991">
-						<!-- Item latest -->
-						<div class="m-b-45">
-							<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-								<img src="~/assets/images/latest-01.jpg" alt="IMG">
-							</a>
-
-							<div class="p-t-16">
-								<h5 class="p-b-5">
-									<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-										You wish lorem ipsum dolor sit amet consectetur
-									</a>
-								</h5>
-
-								<span class="cl8">
-									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-										by John Alvarado
-									</a>
-
-									<span class="f1-s-3 m-rl-3">
-										-
-									</span>
-
-									<span class="f1-s-3">
-										Feb 18
-									</span>
-								</span>
-							</div>
-						</div>
-					</div>
-
+							a = a + 1;
+						}
+					}
 
 				</div>
 			</div>

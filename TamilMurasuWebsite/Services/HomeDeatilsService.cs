@@ -89,5 +89,46 @@ namespace TamilMurasuWebsite.Services
 			adapter.Fill(dtt);
 			return dtt;
 		}
+		public DataTable GetIndiaNews()
+		{
+			string SvSql = string.Empty;
+			SvSql = "select top 4 N_Id,C_Id,NT_Head,N_Description,S_Image,L_Image,CONVERT(varchar, TMNews_N.AddedDate, 106) AS AddedDateFormatted from TMNews_N  where C_id='3' and deletenews='Y'  order by N_Id desc";
+			DataTable dtt = new DataTable();
+			SqlDataAdapter adapter = new SqlDataAdapter(SvSql, _connectionString);
+			SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+			adapter.Fill(dtt);
+			return dtt;
+		}
+		public DataTable GetWorldNews()
+		{
+			string SvSql = string.Empty;
+			SvSql = "select top 4 N_Id,C_Id,NT_Head,N_Description,S_Image,L_Image,CONVERT(varchar, TMNews_N.AddedDate, 106) AS AddedDateFormatted from TMNews_N  where C_id='5' and deletenews='Y'  order by N_Id desc";
+			DataTable dtt = new DataTable();
+			SqlDataAdapter adapter = new SqlDataAdapter(SvSql, _connectionString);
+			SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+			adapter.Fill(dtt);
+			return dtt;
+		}
+		public DataTable GetTopIndiaNews()
+		{
+			string SvSql = string.Empty;
+			SvSql = "select top 1 N_Id,C_Id,NT_Head,N_Description,S_Image,L_Image,CONVERT(varchar, TMNews_N.AddedDate, 106) AS AddedDateFormatted from TMNews_N  where C_id='5' and deletenews='Y'  order by N_Id desc";
+			DataTable dtt = new DataTable();
+			SqlDataAdapter adapter = new SqlDataAdapter(SvSql, _connectionString);
+			SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+			adapter.Fill(dtt);
+			return dtt;
+		}
+		public DataTable GetTopCinimaNews()
+		{
+			string SvSql = string.Empty;
+			SvSql = "select top 1 N_Id,C_Id,NT_Head,N_Description,S_Image,L_Image,CONVERT(varchar, TMNews_N.AddedDate, 106) AS AddedDateFormatted from TMNews_N  where C_id='7' and deletenews='Y'  order by N_Id desc";
+			DataTable dtt = new DataTable();
+			SqlDataAdapter adapter = new SqlDataAdapter(SvSql, _connectionString);
+			SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+			adapter.Fill(dtt);
+			return dtt;
+		}
+
 	}
 }
