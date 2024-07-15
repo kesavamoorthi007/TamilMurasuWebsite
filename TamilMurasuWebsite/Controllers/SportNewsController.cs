@@ -64,6 +64,12 @@ namespace TamilMurasuWebsite.Controllers
 			br.SportNewsDetailslst = TData1;
 			return View(br);
 		}
+		public ActionResult ShowImage(string filename)
+		{
+			var file = filename;
+			var ext = file.Split('.').Last();
+			return File(file, "image/" + ext, Path.GetFileName(file));
+		}
 
 	}
 }
