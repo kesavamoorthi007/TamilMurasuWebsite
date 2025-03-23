@@ -173,8 +173,8 @@
 								<!-- Item latest -->
 								<div class="m-b-45">
 									<a href="@Url.ActionLink("SportNewsDetails","SportNews" ,new { id =item.N_id })" class="wrap-pic-w hov1 trans-03">
-									 @*<img src='@Html.DisplayFor(o => o.SportNewsHeadlst[k].News_image)' />*@
-										<img src="@Url.Action("ShowImage",new { filename=Model.SportNewsHeadlst[k].News_image })" alt="1.png" />
+									
+										<img src="@Url.Content("" + Model.SportNewsHeadlst[k].News_image)" alt="1.png" />
 									</a>
 
 									<div class="p-t-16">
