@@ -1,8 +1,8 @@
-using Microsoft.Extensions.DependencyInjection.Extensions;
+﻿using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Http.Features;
 using TamilMurasuWebsite.Interface;
 using TamilMurasuWebsite.Services;
-
+using Microsoft.Extensions.FileProviders;
 internal class Program
 {
     private static void Main(string[] args)
@@ -45,7 +45,12 @@ internal class Program
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
-
+        // ✅ Serve shared Uploads folder (D:\Tamilmurusu\Uploads)
+        app.UseStaticFiles(new StaticFileOptions
+        {
+            FileProvider = new PhysicalFileProvider(@"D:\Tamilmurusu\Uploads"),
+            RequestPath = "/Uploads"
+        });
         app.UseRouting();
 
 
