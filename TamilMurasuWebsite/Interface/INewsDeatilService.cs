@@ -7,6 +7,6 @@ namespace TamilMurasuWebsite.Interface
 {
 	public interface INewsDeatilService
 	{
-		DataTable GetNewsDeatils();
+		DataTable GetNewsDeatils(string id);
 	}
 }

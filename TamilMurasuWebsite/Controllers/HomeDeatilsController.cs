@@ -43,32 +43,46 @@ namespace TamilMurasuWebsite.Controllers
 			}
 			DataTable dt2 = new DataTable();
 			dt2 = HomeDeatilsService.GetSportNews();
-			for (int i = 0; i < dt2.Rows.Count; i++)
+            List<SportsNews> TData7 = new List<SportsNews>();
+            SportsNews tda7 = new SportsNews();
+            for (int i = 0; i < dt2.Rows.Count; i++)
 			{
-				br.News_head1_sport = dt2.Rows[i]["NT_Head"].ToString();
-				br.News_des = dt2.Rows[i]["N_Description"].ToString();
-				br.News_image = dt2.Rows[i]["S_Image"].ToString();
-				br.News_date = dt2.Rows[i]["AddedDateFormatted"].ToString();
+                tda7.News_head1_sport = dt2.Rows[i]["NT_Head"].ToString();
+                tda7.ID = dt2.Rows[i]["N_Id"].ToString();
+                tda7.News_des = dt2.Rows[i]["N_Description"].ToString();
+                tda7.News_image = dt2.Rows[i]["S_Image"].ToString();
+                tda7.News_Limage = dt2.Rows[i]["L_Image"].ToString();
+                tda7.News_date = dt2.Rows[i]["AddedDateFormatted"].ToString();
+                TData7.Add(tda7);
 
-			}
+            }
 			DataTable dt3 = new DataTable();
-			dt3 = HomeDeatilsService.GetHeadNews();
+            List<HeadNews> TData5 = new List<HeadNews>();
+            HeadNews tda5 = new HeadNews();
+            dt3 = HomeDeatilsService.GetHeadNews();
 			for (int i = 0; i < dt3.Rows.Count; i++)
 			{
-				br.NT_head = dt3.Rows[i]["NT_head"].ToString();
-				br.NT_date = dt3.Rows[i]["AddedDateFormatted"].ToString();
+                tda5.NT_head = dt3.Rows[i]["NT_head"].ToString();
+                tda5.ID = dt3.Rows[i]["N_Id"].ToString();
+                tda5.NT_Image = dt3.Rows[i]["S_Image"].ToString();
+                tda5.NT_date = dt3.Rows[i]["AddedDateFormatted"].ToString();
+                TData5.Add(tda5);
 
-			}
+            }
 			DataTable dt4 = new DataTable();
-			dt4 = HomeDeatilsService.GetNewsLine();
+            List<NewsLine> TData6 = new List<NewsLine>();
+            NewsLine tda6 = new NewsLine();
+            dt4 = HomeDeatilsService.GetNewsLine();
 			for (int i = 0; i < dt4.Rows.Count; i++)
 			{
-				br.News_head1 = dt4.Rows[i]["NT_Head"].ToString();
-				br.News_des = dt4.Rows[i]["N_Description"].ToString();
-				br.News_image = dt4.Rows[i]["S_Image"].ToString();
-				br.News_date = dt4.Rows[i]["AddedDateFormatted"].ToString();
+                tda6.News_head1 = dt4.Rows[i]["NT_Head"].ToString();
+                tda6.ID = dt4.Rows[i]["N_Id"].ToString();
+                tda6.News_des = dt4.Rows[i]["N_Description"].ToString();
+                tda6.News_image = dt4.Rows[i]["S_Image"].ToString();
+                tda6.News_date = dt4.Rows[i]["AddedDateFormatted"].ToString();
+                TData6.Add(tda6);
 
-			}
+            }
 			DataTable dt5 = new DataTable();
             dt5 = HomeDeatilsService.GetSportLine();
 
@@ -132,33 +146,42 @@ namespace TamilMurasuWebsite.Controllers
 				tda4.N_id = dt8.Rows[i]["N_Id"].ToString();
 				TData4.Add(tda4);
 			}
-			DataTable dt9 = new DataTable();
+            List<TopIndiaNews> TData8 = new List<TopIndiaNews>();
+            TopIndiaNews tda8 = new TopIndiaNews();
+            DataTable dt9 = new DataTable();
 			dt9 = HomeDeatilsService.GetTopIndiaNews();
 			for (int i = 0; i < dt9.Rows.Count; i++)
 			{
-				br.NT_Head_i = dt9.Rows[i]["NT_Head"].ToString();
-				br.N_Description_i = dt9.Rows[i]["N_Description"].ToString();
-				br.S_Image_i = dt9.Rows[i]["S_Image"].ToString();
-				br.L_Image_i = dt9.Rows[i]["L_Image"].ToString();
-				br.date_i = dt9.Rows[i]["AddedDateFormatted"].ToString();
-				br.N_id = dt9.Rows[i]["N_Id"].ToString();
+                tda8.NT_Head_i = dt9.Rows[i]["NT_Head"].ToString();
+                tda8.N_Description_i = dt9.Rows[i]["N_Description"].ToString();
+                tda8.S_Image_i = dt9.Rows[i]["S_Image"].ToString();
+                tda8.L_Image_i = dt9.Rows[i]["L_Image"].ToString();
+                tda8.date_i = dt9.Rows[i]["AddedDateFormatted"].ToString();
+                tda8.N_id = dt9.Rows[i]["N_Id"].ToString();
+                TData8.Add(tda8);
 
-			}
-
-			DataTable dt10 = new DataTable();
+            }
+            List<TopCinimaNews> TData9 = new List<TopCinimaNews>();
+            TopCinimaNews tda9 = new TopCinimaNews();
+            DataTable dt10 = new DataTable();
 			dt10 = HomeDeatilsService.GetTopCinimaNews();
 			for (int i = 0; i < dt10.Rows.Count; i++)
 			{
-				br.NT_Head_c = dt10.Rows[i]["NT_Head"].ToString();
-				br.N_Description_c = dt10.Rows[i]["N_Description"].ToString();
-				br.S_Image_c = dt10.Rows[i]["S_Image"].ToString();
-				br.L_Image_c = dt10.Rows[i]["L_Image"].ToString();
-				br.date_c = dt10.Rows[i]["AddedDateFormatted"].ToString();
-				br.N_id = dt10.Rows[i]["N_Id"].ToString();
+                tda9.NT_Head_c = dt10.Rows[i]["NT_Head"].ToString();
+                tda9.N_Description_c = dt10.Rows[i]["N_Description"].ToString();
+                tda9.S_Image_c = dt10.Rows[i]["S_Image"].ToString();
+                tda9.L_Image_c = dt10.Rows[i]["L_Image"].ToString();
+                tda9.date_c = dt10.Rows[i]["AddedDateFormatted"].ToString();
+                tda9.N_id = dt10.Rows[i]["N_Id"].ToString();
+                TData9.Add(tda9);
 
-			}
-
-			br.WorldNewsListlst = TData4;
+            }
+            br.HeadNewslist = TData5;
+            br.SportsNewslist = TData7;
+            br.TopIndiaNewslist = TData8;
+            br.TopCinimaNewslist = TData9;
+            br.NewsLinelist = TData6;
+            br.WorldNewsListlst = TData4;
 			br.IndiaNewsListlst = TData3;
 			br.NewsFirstlst = TData2;
 			br.Latestslst = TData1;

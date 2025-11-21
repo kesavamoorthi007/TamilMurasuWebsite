@@ -42,7 +42,7 @@ namespace TamilMurasuWebsite.Services
 		public DataTable GetSportNews()
 		{
 			string SvSql = string.Empty;
-			SvSql = "select top 1 N_Id,C_Id,NT_Head,N_Description,S_Image,CONVERT(varchar, TMNews_N.AddedDate, 106) AS AddedDateFormatted from TMNews_N  where C_id='6' order by N_Id desc";
+			SvSql = "select top 1 N_Id,C_Id,NT_Head,N_Description,S_Image,L_Image,CONVERT(varchar, TMNews_N.AddedDate, 106) AS AddedDateFormatted from TMNews_N  where C_id='6' order by N_Id desc";
 			DataTable dtt = new DataTable();
 			SqlDataAdapter adapter = new SqlDataAdapter(SvSql, _connectionString);
 			SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
@@ -52,7 +52,7 @@ namespace TamilMurasuWebsite.Services
 		public DataTable GetHeadNews()
 		{
 			string SvSql = string.Empty;
-			SvSql = "select top 1 N_Id,C_Id,NT_Head,N_Description,S_Image,CONVERT(varchar, TMNews_N.AddedDate, 106) AS AddedDateFormatted from TMNews_N  where editorpick='1' order by N_Id desc";
+			SvSql = "select top 1 N_Id,C_Id,NT_Head,N_Description,S_Image,CONVERT(varchar, TMNews_N.AddedDate, 106) AS AddedDateFormatted from TMNews_N  where C_id='1' order by N_Id desc";
 			DataTable dtt = new DataTable();
 			SqlDataAdapter adapter = new SqlDataAdapter(SvSql, _connectionString);
 			SqlCommandBuilder builder = new SqlCommandBuilder(adapter);

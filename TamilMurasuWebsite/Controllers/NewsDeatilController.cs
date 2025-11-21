@@ -17,21 +17,28 @@ namespace TamilMurasuWebsite.Controllers
 			NewsDeatilService = _NewsDeatilService;
 			_connectionString = _configuratio.GetConnectionString("MySqlConnection");
 		}
-		public IActionResult NewsDeatil()
+		public IActionResult NewsDeatil(string id)
 		{
 			NewsDeatil br = new NewsDeatil();
 
-			DataTable dt1 = new DataTable();
-			dt1 = NewsDeatilService.GetNewsDeatils();
+            List<NewsDeatils> TData = new List<NewsDeatils>();
+            NewsDeatils tda = new NewsDeatils();
+
+            DataTable dt1 = new DataTable();
+			dt1 = NewsDeatilService.GetNewsDeatils(id);
 			for (int i = 0; i < dt1.Rows.Count; i++)
 			{
-				br.News_head1 = dt1.Rows[i]["NT_Head"].ToString();
-				br.News_des = dt1.Rows[i]["N_Description"].ToString();
-				br.News_image = dt1.Rows[i]["S_Image"].ToString();
-				br.News_date = dt1.Rows[i]["AddedDateFormatted"].ToString();
+                tda.News_head1 = dt1.Rows[i]["NT_Head"].ToString();
+                tda.News_des = dt1.Rows[i]["N_Description"].ToString();
+                tda.News_image = dt1.Rows[i]["S_Image"].ToString();
+                tda.News_date = dt1.Rows[i]["AddedDateFormatted"].ToString();
+                tda.News_image_L = dt1.Rows[i]["L_Image"].ToString();
+                tda.ID = dt1.Rows[i]["L_Image"].ToString();
+                TData.Add(tda);
 
-			}
-			return View(br);
+            }
+            br.NewsDeatilslst = TData;
+            return View(br);
 		}
 	}
 }
